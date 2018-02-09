@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": true,
+    "outDir": "./build",
+    "sourceMap": true,
+    "listEmittedFiles": false
+  },
+
+  "include": ["src/**/*"]
+}
