@@ -1,11 +1,29 @@
+import * as express from "express";
+
 export interface IController {
-  Get(): void;
+  Get(
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ): void;
 
-  Post(): void;
+  Post(
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ): void;
 
-  Del(): void;
+  Del(
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ): void;
 
-  Put(): void;
+  Put(
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ): void;
 }
 
 export type IControllerBase = IController;

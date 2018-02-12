@@ -1,3 +1,4 @@
+import * as express from "express";
 import { ExpressServerArgs } from "./ExpressServerArgs";
 import { importFromDirectories } from "../utils";
 import {
@@ -8,6 +9,8 @@ import { BaseController } from "./controllers/BaseController";
 import { IController, IControllerBase } from "./controllers/types/IController";
 
 export class ExpressServer {
+  private app = express();
+
   /**
    * Initializes a new instance of the Express server.
    */
@@ -15,14 +18,15 @@ export class ExpressServer {
 
   createServer(): any {
     this.loadControllers();
-    this.getHandlersFromControllers();
+    this.injectRoutes();
+    return this.app;
   }
 
-  getHandlersFromControllers(): void {
+  injectRoutes(): void {
     getMetadataStorage().controllers.forEach((item: ControllerMetadataArgs) => {
       const c = item.target as any;
       const inst: IController = new c();
-      inst.Get();
+      this.app.get("/", inst.Get);
     });
   }
 

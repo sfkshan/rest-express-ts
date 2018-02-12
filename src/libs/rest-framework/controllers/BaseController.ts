@@ -1,4 +1,6 @@
+import * as express from "express";
 import { IController } from "./types/IController";
+import { insertRecord } from "../../../api/repository";
 
 export class BaseController implements IController {
   /**
@@ -6,19 +8,20 @@ export class BaseController implements IController {
    */
   constructor(private modelName?: string) {}
 
-  Get(): void {
-    console.log(`Get is called with model = ${this.modelName}`);
+  async Get(req: express.Request, res: express.Response): Promise<void> {
+    await insertRecord();
+    res.json({ message: "Hello, World" });
   }
 
-  Post(): void {
+  Post(req: express.Request, res: express.Response): void {
     console.log("Post()");
   }
 
-  Del(): void {
+  Del(req: express.Request, res: express.Response): void {
     console.log("Del()");
   }
 
-  Put(): void {
+  Put(req: express.Request, res: express.Response): void {
     console.log("Put()");
   }
 }
