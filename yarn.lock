@@ -1600,6 +1600,10 @@ interpret@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.intuit.net/i/interpret/_attachments/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
 
+inversify@^4.10.0:
+  version "4.10.0"
+  resolved "https://registry.npmjs.intuit.net/i/inversify/_attachments/inversify-4.10.0.tgz#06b97792e69220dd150b986cde9a445b3bcb9482"
+
 invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.intuit.net/i/invert-kv/_attachments/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"

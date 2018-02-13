@@ -1,8 +1,8 @@
 import * as express from "express";
-import { IController } from "./types/IController";
+import { ICrudController } from "./types/IController";
 import { insertRecord } from "../../../api/repository";
 
-export class BaseController implements IController {
+export class BaseController implements ICrudController {
   /**
    * Initializes a new instance of the BaseController class.
    */

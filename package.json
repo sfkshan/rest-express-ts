@@ -16,6 +16,7 @@
     "gulp-clean": "^0.4.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^4.0.1",
+    "inversify": "^4.10.0",
     "reflect-metadata": "^0.1.10",
     "sqlite3": "^3.1.10",
     "typeorm": "0.1.12"
@@ -25,8 +26,13 @@
     "compile": "ts-node src/index.ts"
   },
   "nodemonConfig": {
-    "ignore": ["test/*", "docs/*"],
-    "watch": ["src"],
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
+    "watch": [
+      "src"
+    ],
     "ext": "ts",
     "exec": "ts-node ./src/index.ts"
   }

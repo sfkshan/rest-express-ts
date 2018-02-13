@@ -1,6 +1,6 @@
 import * as express from "express";
 
-export interface IController {
+export interface ICrudController {
   Get(
     req: express.Request,
     res: express.Response,
@@ -26,4 +26,4 @@ export interface IController {
   ): void;
 }
 
-export type IControllerBase = IController;
+export type ICrudControllerBase = ICrudController;

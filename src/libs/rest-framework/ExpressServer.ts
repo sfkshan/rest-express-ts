@@ -6,7 +6,7 @@ import {
   ControllerMetadataArgs
 } from "../rest-framework/storage";
 import { BaseController } from "./controllers/BaseController";
-import { IController, IControllerBase } from "./controllers/types/IController";
+import { ICrudController, ICrudControllerBase } from "./controllers/types/IController";
 
 export class ExpressServer {
   private app = express();
@@ -25,7 +25,7 @@ export class ExpressServer {
   injectRoutes(): void {
     getMetadataStorage().controllers.forEach((item: ControllerMetadataArgs) => {
       const c = item.target as any;
-      const inst: IController = new c();
+      const inst: ICrudController = new c();
       this.app.get("/", inst.Get);
     });
   }
